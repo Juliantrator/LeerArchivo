@@ -1,0 +1,36 @@
+
+
+import java.io.*;
+
+class Copiar {
+   public static void main(String [] arg) {
+      File archivo = null;
+      FileReader fr = null;
+      BufferedReader br = null;
+      String linea;
+      try {
+       
+         archivo = new File ("C:\\Users\\Juliantrator\\Google Drive\\Hola.txt");
+         fr = new FileReader (archivo);
+         br = new BufferedReader(fr);
+
+      
+         
+         while((linea=br.readLine())!=null)
+            System.out.println(linea);
+      }
+      catch(Exception e){
+         e.printStackTrace();
+      }finally{
+     
+         try{                    
+            if( null != fr ){   
+               fr.close();     
+            }                  
+         }catch (Exception e2){ 
+            e2.printStackTrace();
+         }
+      }
+   }
+
+}
